@@ -1,0 +1,219 @@
+[
+  {
+    "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    "brand": "Nike",
+    "colorway": "string",
+    "gender": "Male",
+    "media": {
+      "imageUrl": "https://static.nike.com/a/images/t_default/f65df0d0-638d-44ce-b14d-edec03f296c6/e-series-1-shoes-j57hxR.png",
+      "smallImageUrl": "string",
+      "thumbUrl": "string"
+    },
+    "releaseDate": "2022-12-15",
+    "retailPrice": 2500,
+    "styleId": "string",
+    "shoe": "string",
+    "name": "Nike Air",
+    "title": "string",
+    "year": 0
+  },
+  {
+    "id": "3fa85f64-5717-4562-b3fc-2c963f66afa7",
+    "brand": "Nike",
+    "colorway": "string",
+    "gender": "Male",
+    "media": {
+      "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/28f581f1-975a-4df9-88b2-2ea2fb6d75f1/air-jordan-xxxvii-low-pf-basketball-shoes-7z7ltC.png",
+      "smallImageUrl": "string",
+      "thumbUrl": "string"
+    },
+    "releaseDate": "2022-12-15",
+    "retailPrice": 5000,
+    "styleId": "string",
+    "shoe": "string",
+    "name": "Nike Jordan",
+    "title": "string",
+    "year": 0
+  },
+  {
+    "id": "3fa85f64-5717-4562-b3fc-2c963f66afa5",
+    "brand": "Nike",
+    "colorway": "string",
+    "gender": "Male",
+    "media": {
+      "imageUrl": "https://static.nike.com/a/images/t_default/f65df0d0-638d-44ce-b14d-edec03f296c6/e-series-1-shoes-j57hxR.png",
+      "smallImageUrl": "string",
+      "thumbUrl": "string"
+    },
+    "releaseDate": "2022-12-15",
+    "retailPrice": 2500,
+    "styleId": "string",
+    "shoe": "string",
+    "name": "Nike Air",
+    "title": "string",
+    "year": 0
+  },
+  {
+    "id": "3fa85f64-5717-4562-b3fc-2c963f66afa4",
+    "brand": "Nike",
+    "colorway": "string",
+    "gender": "Male",
+    "media": {
+      "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/28f581f1-975a-4df9-88b2-2ea2fb6d75f1/air-jordan-xxxvii-low-pf-basketball-shoes-7z7ltC.png",
+      "smallImageUrl": "string",
+      "thumbUrl": "string"
+    },
+    "releaseDate": "2022-12-15",
+    "retailPrice": 5000,
+    "styleId": "string",
+    "shoe": "string",
+    "name": "Nike Jordan",
+    "title": "string",
+    "year": 0
+  },
+  {
+    "id": "3fa85f64-5717-4562-b3fc-2c963f66afa3",
+    "brand": "Nike",
+    "colorway": "string",
+    "gender": "Male",
+    "media": {
+      "imageUrl": "https://static.nike.com/a/images/t_default/f65df0d0-638d-44ce-b14d-edec03f296c6/e-series-1-shoes-j57hxR.png",
+      "smallImageUrl": "string",
+      "thumbUrl": "string"
+    },
+    "releaseDate": "2022-12-15",
+    "retailPrice": 2500,
+    "styleId": "string",
+    "shoe": "string",
+    "name": "Nike Air",
+    "title": "string",
+    "year": 0
+  },
+  {
+    "id": "3fa85f64-5717-4562-b3fc-2c963f66afa2",
+    "brand": "Nike",
+    "colorway": "string",
+    "gender": "Male",
+    "media": {
+      "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/28f581f1-975a-4df9-88b2-2ea2fb6d75f1/air-jordan-xxxvii-low-pf-basketball-shoes-7z7ltC.png",
+      "smallImageUrl": "string",
+      "thumbUrl": "string"
+    },
+    "releaseDate": "2022-12-15",
+    "retailPrice": 5000,
+    "styleId": "string",
+    "shoe": "string",
+    "name": "Nike Jordan",
+    "title": "string",
+    "year": 0
+  },
+  {
+    "id": "3fa85f64-5717-4562-b3fc-2c963f66afb1",
+    "brand": "Nike",
+    "colorway": "string",
+    "gender": "Male",
+    "media": {
+      "imageUrl": "https://static.nike.com/a/images/t_default/f65df0d0-638d-44ce-b14d-edec03f296c6/e-series-1-shoes-j57hxR.png",
+      "smallImageUrl": "string",
+      "thumbUrl": "string"
+    },
+    "releaseDate": "2022-12-15",
+    "retailPrice": 2500,
+    "styleId": "string",
+    "shoe": "string",
+    "name": "Nike Air",
+    "title": "string",
+    "year": 0
+  },
+  {
+    "id": "3fa85f64-5717-4562-b3fc-2c963f66afb2",
+    "brand": "Nike",
+    "colorway": "string",
+    "gender": "Male",
+    "media": {
+      "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/28f581f1-975a-4df9-88b2-2ea2fb6d75f1/air-jordan-xxxvii-low-pf-basketball-shoes-7z7ltC.png",
+      "smallImageUrl": "string",
+      "thumbUrl": "string"
+    },
+    "releaseDate": "2022-12-15",
+    "retailPrice": 5000,
+    "styleId": "string",
+    "shoe": "string",
+    "name": "Nike Jordan",
+    "title": "string",
+    "year": 0
+  },
+  {
+    "id": "3fa85f64-5717-4562-b3fc-2c963f66afb3",
+    "brand": "Nike",
+    "colorway": "string",
+    "gender": "Male",
+    "media": {
+      "imageUrl": "https://static.nike.com/a/images/t_default/f65df0d0-638d-44ce-b14d-edec03f296c6/e-series-1-shoes-j57hxR.png",
+      "smallImageUrl": "string",
+      "thumbUrl": "string"
+    },
+    "releaseDate": "2022-12-15",
+    "retailPrice": 2500,
+    "styleId": "string",
+    "shoe": "string",
+    "name": "Nike Air",
+    "title": "string",
+    "year": 0
+  },
+  {
+    "id": "3fa85f64-5717-4562-b3fc-2c963f66afb4",
+    "brand": "Nike",
+    "colorway": "string",
+    "gender": "Male",
+    "media": {
+      "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/28f581f1-975a-4df9-88b2-2ea2fb6d75f1/air-jordan-xxxvii-low-pf-basketball-shoes-7z7ltC.png",
+      "smallImageUrl": "string",
+      "thumbUrl": "string"
+    },
+    "releaseDate": "2022-12-15",
+    "retailPrice": 5000,
+    "styleId": "string",
+    "shoe": "string",
+    "name": "Nike Jordan",
+    "title": "string",
+    "year": 0
+  },
+  {
+    "id": "3fa85f64-5717-4562-b3fc-2c963f66afb5",
+    "brand": "Nike",
+    "colorway": "string",
+    "gender": "Male",
+    "media": {
+      "imageUrl": "https://static.nike.com/a/images/t_default/f65df0d0-638d-44ce-b14d-edec03f296c6/e-series-1-shoes-j57hxR.png",
+      "smallImageUrl": "string",
+      "thumbUrl": "string"
+    },
+    "releaseDate": "2022-12-15",
+    "retailPrice": 2500,
+    "styleId": "string",
+    "shoe": "string",
+    "name": "Nike Air",
+    "title": "string",
+    "year": 0
+  },
+  {
+    "id": "3fa85f64-5717-4562-b3fc-2c963f66afb6",
+    "brand": "Nike",
+    "colorway": "string",
+    "gender": "Male",
+    "media": {
+      "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/28f581f1-975a-4df9-88b2-2ea2fb6d75f1/air-jordan-xxxvii-low-pf-basketball-shoes-7z7ltC.png",
+      "smallImageUrl": "string",
+      "thumbUrl": "string"
+    },
+    "releaseDate": "2022-12-15",
+    "retailPrice": 5000,
+    "styleId": "string",
+    "shoe": "string",
+    "name": "Nike Jordan",
+    "title": "string",
+    "year": 0
+  }
+
+]
