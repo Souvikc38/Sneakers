@@ -5,14 +5,43 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingStart="14dp"
+
     tools:context=".views.ShoesInventoryFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_product_recycler"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:paddingBottom="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="48dp"
+        android:contentDescription="add_button"
+        android:src="@drawable/ic_add_circle_btn"
+        app:backgroundTint="@color/teal_700"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:rippleColor="@color/teal_200" />
+
+    <TextView
+        android:id="@+id/tv_count"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:layout_centerVertical="true"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/fabButton"
+        app:layout_constraintEnd_toEndOf="@+id/fabButton"
+        app:layout_constraintStart_toStartOf="@+id/fabButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

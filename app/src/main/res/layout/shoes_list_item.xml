@@ -5,9 +5,12 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:id="@+id/card_view"
-        android:layout_height="250dp"
+        android:layout_height="220dp"
         app:cardCornerRadius="20dp"
-        app:cardElevation="2dp">
+        app:cardElevation="2dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="2dp">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -17,7 +20,8 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
-                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -26,10 +30,10 @@
                 android:id="@+id/tv_name"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="TextView"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
-                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginBottom="5dp"
                 app:layout_constraintBottom_toTopOf="@+id/tv_price"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -45,6 +49,17 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:srcCompat="@tools:sample/avatars" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_add_icon"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_add_circle_btn" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </layout>

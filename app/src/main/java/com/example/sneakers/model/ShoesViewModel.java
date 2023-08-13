@@ -16,6 +16,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 
@@ -26,10 +27,37 @@ public class ShoesViewModel extends ViewModel {
 
     public LiveData<List<ShoesModel>> getShoesListLiveData(Resources resources) {
         if (shoesListLiveData.getValue() == null) {
-            List<ShoesModel> userList = parseJsonArray(resources);
-            shoesListLiveData.postValue(userList);
+            List<ShoesModel> shoesList = parseJsonArray(resources);
+            shoesListLiveData.postValue(shoesList);
         }
         return shoesListLiveData;
+    }
+  /*  private MutableLiveData<HashMap<String,ShoesModel>> selectedListLiveData = new MutableLiveData<>();
+
+    public LiveData<HashMap<String,ShoesModel>> getSelectedListLiveData() {
+        if (shoesListLiveData.getValue() == null) {
+            HashMap<String,ShoesModel> shoesMap = new HashMap<>();
+            shoesListLiveData.postValue(shoesMap);
+        }
+        return shoesListLiveData;
+    }
+    private  HashMap<String,ShoesModel> set*/
+
+    private HashMap<String,ShoesModel> itemList = new HashMap<>();;
+
+    public HashMap<String,ShoesModel> getItemList() {
+        return itemList;
+    }
+
+    public void addItem(String productId,ShoesModel selectedShoes) {
+        itemList.put(productId,selectedShoes);
+    }
+
+    public void deleteItem(String productId) {
+        itemList.remove(productId);
+    }
+    public int itemCount() {
+        return this.itemList.size();
     }
 
     private List<ShoesModel> parseJsonArray(Resources resources) {
@@ -44,8 +72,10 @@ public class ShoesViewModel extends ViewModel {
             for (int i = 0; i < shoesJsonArray.length(); i++) {
                 JSONObject jsonObject = shoesJsonArray.getJSONObject(i);
                 ShoesModel shoes = new ShoesModel();
+                shoes.setId(jsonObject.getString("id"));
                 shoes.setName(jsonObject.getString("name"));
                 shoes.setRetailprice(jsonObject.getInt("retailPrice"));
+                shoes.setTax(jsonObject.getInt("tax"));
                 JSONObject mediaObject = jsonObject.getJSONObject("media");
                 ShoesModel.Media media = new ShoesModel.Media();
                 media.setImageurl(mediaObject.getString("imageUrl"));

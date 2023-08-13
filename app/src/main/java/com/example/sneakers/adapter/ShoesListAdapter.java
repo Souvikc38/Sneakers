@@ -42,16 +42,25 @@ private Context mContext;
 
     @Override
     public void onBindViewHolder(@NonNull ShoesViewHolder holder, int position) {
-        final ShoesModel shoesModel = this.shoesModelList.get(position);
-        viewBinding.tvName.setText(shoesModel.getName());
-        Log.e(TAG, "onBindViewHolder: "+shoesModel.getMedia().getImageurl());
-        Glide.with(mContext).load(shoesModel.getMedia().getImageurl()).into(viewBinding.ivProductImg);
+         ShoesModel shoesModels = shoesModelList.get(position);
+        Glide.with(mContext).load(shoesModels.getMedia().getImageurl()).into(viewBinding.ivProductImg);
+        viewBinding.tvName.setText(shoesModels.getName());
+        viewBinding.tvPrice.setText(String.valueOf(shoesModels.getRetailprice()));
+
+        viewBinding.ivAddIcon.setOnClickListener(view -> {
+            productClickListner.onProductClick(shoesModels.getId(),shoesModels);
+        });
 
     }
 
     @Override
     public int getItemCount() {
         return shoesModelList.size();
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return position;
     }
 
     class ShoesViewHolder extends RecyclerView.ViewHolder{
@@ -62,6 +71,6 @@ private Context mContext;
         }
     }
     public interface ProductClickListner{
-        void onProductClick(ArrayList<ShoesModel> shoesModelArrayList);
+        void onProductClick(String itemId, ShoesModel shoesModel);
     }
 }

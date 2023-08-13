@@ -8,6 +8,7 @@ public  class ShoesModel {
     private String shoe;
     private String styleid;
     private int retailprice;
+    private int tax;
     private String releasedate;
     private Media media;
     private String gender;
@@ -127,6 +128,14 @@ public  class ShoesModel {
                 ", brand='" + brand + '\'' +
                 ", id='" + id + '\'' +
                 '}';
+    }
+
+    public int getTax() {
+        return tax;
+    }
+
+    public void setTax(int tax) {
+        this.tax = tax;
     }
 
     public static class Media {

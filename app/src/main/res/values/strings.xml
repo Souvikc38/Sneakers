@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Sneakers</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="order_details">Order details</string>
+    <string name="total">Total</string>
+    <string name="taxes_and_charges">Taxes and Charges</string>
 </resources>

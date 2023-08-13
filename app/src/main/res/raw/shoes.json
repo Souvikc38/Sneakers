@@ -11,11 +11,12 @@
     },
     "releaseDate": "2022-12-15",
     "retailPrice": 2500,
+    "tax": 20,
     "styleId": "string",
     "shoe": "string",
     "name": "Nike Air",
     "title": "string",
-    "year": 0
+    "year": 2021
   },
   {
     "id": "3fa85f64-5717-4562-b3fc-2c963f66afa7",
@@ -29,11 +30,12 @@
     },
     "releaseDate": "2022-12-15",
     "retailPrice": 5000,
+    "tax": 20,
     "styleId": "string",
     "shoe": "string",
     "name": "Nike Jordan",
     "title": "string",
-    "year": 0
+    "year": 2022
   },
   {
     "id": "3fa85f64-5717-4562-b3fc-2c963f66afa5",
@@ -47,11 +49,12 @@
     },
     "releaseDate": "2022-12-15",
     "retailPrice": 2500,
+    "tax": 20,
     "styleId": "string",
     "shoe": "string",
     "name": "Nike Air",
     "title": "string",
-    "year": 0
+    "year": 2023
   },
   {
     "id": "3fa85f64-5717-4562-b3fc-2c963f66afa4",
@@ -65,11 +68,12 @@
     },
     "releaseDate": "2022-12-15",
     "retailPrice": 5000,
+    "tax": 20,
     "styleId": "string",
     "shoe": "string",
     "name": "Nike Jordan",
     "title": "string",
-    "year": 0
+    "year": 2022
   },
   {
     "id": "3fa85f64-5717-4562-b3fc-2c963f66afa3",
@@ -83,11 +87,12 @@
     },
     "releaseDate": "2022-12-15",
     "retailPrice": 2500,
+    "tax": 20,
     "styleId": "string",
     "shoe": "string",
     "name": "Nike Air",
     "title": "string",
-    "year": 0
+    "year": 2021
   },
   {
     "id": "3fa85f64-5717-4562-b3fc-2c963f66afa2",
@@ -101,11 +106,12 @@
     },
     "releaseDate": "2022-12-15",
     "retailPrice": 5000,
+    "tax": 20,
     "styleId": "string",
     "shoe": "string",
     "name": "Nike Jordan",
     "title": "string",
-    "year": 0
+    "year": 2023
   },
   {
     "id": "3fa85f64-5717-4562-b3fc-2c963f66afb1",
@@ -119,11 +125,12 @@
     },
     "releaseDate": "2022-12-15",
     "retailPrice": 2500,
+    "tax": 20,
     "styleId": "string",
     "shoe": "string",
     "name": "Nike Air",
     "title": "string",
-    "year": 0
+    "year": 2023
   },
   {
     "id": "3fa85f64-5717-4562-b3fc-2c963f66afb2",
@@ -137,11 +144,12 @@
     },
     "releaseDate": "2022-12-15",
     "retailPrice": 5000,
+    "tax": 20,
     "styleId": "string",
     "shoe": "string",
     "name": "Nike Jordan",
     "title": "string",
-    "year": 0
+    "year": 2023
   },
   {
     "id": "3fa85f64-5717-4562-b3fc-2c963f66afb3",
@@ -155,11 +163,12 @@
     },
     "releaseDate": "2022-12-15",
     "retailPrice": 2500,
+    "tax": 20,
     "styleId": "string",
     "shoe": "string",
     "name": "Nike Air",
     "title": "string",
-    "year": 0
+    "year": 2023
   },
   {
     "id": "3fa85f64-5717-4562-b3fc-2c963f66afb4",
@@ -173,11 +182,12 @@
     },
     "releaseDate": "2022-12-15",
     "retailPrice": 5000,
+    "tax": 20,
     "styleId": "string",
     "shoe": "string",
     "name": "Nike Jordan",
     "title": "string",
-    "year": 0
+    "year": 2023
   },
   {
     "id": "3fa85f64-5717-4562-b3fc-2c963f66afb5",
@@ -191,11 +201,12 @@
     },
     "releaseDate": "2022-12-15",
     "retailPrice": 2500,
+    "tax": 20,
     "styleId": "string",
     "shoe": "string",
     "name": "Nike Air",
     "title": "string",
-    "year": 0
+    "year": 2023
   },
   {
     "id": "3fa85f64-5717-4562-b3fc-2c963f66afb6",
@@ -209,11 +220,12 @@
     },
     "releaseDate": "2022-12-15",
     "retailPrice": 5000,
+    "tax": 20,
     "styleId": "string",
     "shoe": "string",
     "name": "Nike Jordan",
     "title": "string",
-    "year": 0
+    "year": 2023
   }
 
 ]
