@@ -1,6 +1,7 @@
 package com.example.sneakers.model;
 
 import android.content.res.Resources;
+import android.text.SpannableStringBuilder;
 import android.util.Log;
 
 import androidx.lifecycle.LiveData;
@@ -22,7 +23,7 @@ import java.util.Scanner;
 
 public class ShoesViewModel extends ViewModel {
     private static final String TAG = "ShoesViewModel";
-
+    private HashMap<String,ShoesModel> itemList = new HashMap<>();;
     private MutableLiveData<List<ShoesModel>> shoesListLiveData = new MutableLiveData<>();
 
     public LiveData<List<ShoesModel>> getShoesListLiveData(Resources resources) {
@@ -32,6 +33,8 @@ public class ShoesViewModel extends ViewModel {
         }
         return shoesListLiveData;
     }
+    private int subTotalPrice=0;
+    private int totaltax=0;
   /*  private MutableLiveData<HashMap<String,ShoesModel>> selectedListLiveData = new MutableLiveData<>();
 
     public LiveData<HashMap<String,ShoesModel>> getSelectedListLiveData() {
@@ -43,7 +46,7 @@ public class ShoesViewModel extends ViewModel {
     }
     private  HashMap<String,ShoesModel> set*/
 
-    private HashMap<String,ShoesModel> itemList = new HashMap<>();;
+
 
     public HashMap<String,ShoesModel> getItemList() {
         return itemList;
@@ -51,13 +54,47 @@ public class ShoesViewModel extends ViewModel {
 
     public void addItem(String productId,ShoesModel selectedShoes) {
         itemList.put(productId,selectedShoes);
+        addPrice(selectedShoes.getRetailprice(),selectedShoes.getTax());
     }
+    public void deleteItem(String productId,ShoesModel shoesModel) {
 
-    public void deleteItem(String productId) {
         itemList.remove(productId);
+        deductFromPrice(shoesModel.getRetailprice(),shoesModel.getTax());
+
     }
     public int itemCount() {
         return this.itemList.size();
+    }
+
+    private void addPrice(int price,int tax){
+        subTotalPrice= subTotalPrice+price;
+        totaltax=totaltax+tax;
+
+    }
+    private void deductFromPrice(int price, int tax){
+        if(subTotalPrice!=0)
+            subTotalPrice= subTotalPrice-price;
+        if(totaltax!=0)
+            totaltax=totaltax-tax;
+
+    }
+    public int getSubTotalPrice(){
+        return subTotalPrice;
+
+    }
+    public int getTotaltax(){
+        return totaltax;
+
+    }
+    public int getTotalPrice(){
+        return subTotalPrice+totaltax;
+
+    }
+    public String appendString(String key, String value){
+        SpannableStringBuilder message =new SpannableStringBuilder(key);
+        message.append(" : $");
+        message.append(value);
+        return message.toString();
     }
 
     private List<ShoesModel> parseJsonArray(Resources resources) {

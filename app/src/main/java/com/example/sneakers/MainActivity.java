@@ -37,6 +37,16 @@ public class MainActivity extends AppCompatActivity {
         shoesViewModel = new ViewModelProvider(this).get(ShoesViewModel.class);
         parseJsonToDataModel();
     }
+    @Override
+    public void onBackPressed ()
+    {
+        FragmentManager fm = getSupportFragmentManager();
+        if (fm.getBackStackEntryCount() > 0) {
+            fm.popBackStack();
+        } else {
+            super.onBackPressed();
+        }
+    }
 
     private void parseJsonToDataModel(){
         shoesViewModel.getShoesListLiveData(getResources())
@@ -49,14 +59,10 @@ public class MainActivity extends AppCompatActivity {
                 });
     }
 
-    @Override
-    public void onBackPressed ()
-    {
-        FragmentManager fm = getSupportFragmentManager();
-        if (fm.getBackStackEntryCount() > 0) {
-            fm.popBackStack();
-        } else {
-            super.onBackPressed();
-        }
+
+    public ShoesViewModel getShoesViewModel() {
+        return shoesViewModel;
     }
+
+
 }
