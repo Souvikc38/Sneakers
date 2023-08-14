@@ -38,13 +38,18 @@ public class CartFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding= DataBindingUtil.inflate(inflater,R.layout.fragment_cart, container, false);
+        ((MainActivity)getActivity()).showToolbar();
         shoesViewModel =((MainActivity)requireActivity()).getShoesViewModel();
         binding.rvCartRecycler.setLayoutManager(new GridLayoutManager(requireContext(),1,GridLayoutManager.VERTICAL,false));
         shoesModelList = new ArrayList<ShoesModel>(shoesViewModel.getItemList().values());
         cartListAdapter =new CartListAdapter(requireContext(),shoesModelList,this::onRemoveCart);
         binding.rvCartRecycler.setAdapter(cartListAdapter);
-        isRecyclerReady();
         return binding.getRoot();
+    }
+    @Override
+    public void onResume() {
+        super.onResume();
+        isRecyclerReady();
     }
 
     private void onRemoveCart(String productId, int position,ShoesModel shoesModel){
@@ -64,7 +69,10 @@ public class CartFragment extends Fragment {
         binding.rvCartRecycler.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
-                setDetails();
+                if(getContext()!=null){
+                    setDetails();
+                }
+
             }
         });
     }

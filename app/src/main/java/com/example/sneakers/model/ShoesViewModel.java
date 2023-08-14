@@ -23,7 +23,7 @@ import java.util.Scanner;
 
 public class ShoesViewModel extends ViewModel {
     private static final String TAG = "ShoesViewModel";
-    private HashMap<String,ShoesModel> itemList = new HashMap<>();;
+    private HashMap<String,ShoesModel> itemMap = new HashMap<>();;
     private MutableLiveData<List<ShoesModel>> shoesListLiveData = new MutableLiveData<>();
 
     public LiveData<List<ShoesModel>> getShoesListLiveData(Resources resources) {
@@ -34,48 +34,38 @@ public class ShoesViewModel extends ViewModel {
         return shoesListLiveData;
     }
     private int subTotalPrice=0;
-    private int totaltax=0;
-  /*  private MutableLiveData<HashMap<String,ShoesModel>> selectedListLiveData = new MutableLiveData<>();
-
-    public LiveData<HashMap<String,ShoesModel>> getSelectedListLiveData() {
-        if (shoesListLiveData.getValue() == null) {
-            HashMap<String,ShoesModel> shoesMap = new HashMap<>();
-            shoesListLiveData.postValue(shoesMap);
-        }
-        return shoesListLiveData;
-    }
-    private  HashMap<String,ShoesModel> set*/
-
-
+    private int totalTax=0;
 
     public HashMap<String,ShoesModel> getItemList() {
-        return itemList;
+        return itemMap;
     }
 
     public void addItem(String productId,ShoesModel selectedShoes) {
-        itemList.put(productId,selectedShoes);
-        addPrice(selectedShoes.getRetailprice(),selectedShoes.getTax());
+        if(!itemMap.containsKey(productId)) {
+            itemMap.put(productId, selectedShoes);
+            addPrice(selectedShoes.getRetailprice(), selectedShoes.getTax());
+        }
     }
     public void deleteItem(String productId,ShoesModel shoesModel) {
 
-        itemList.remove(productId);
+        itemMap.remove(productId);
         deductFromPrice(shoesModel.getRetailprice(),shoesModel.getTax());
 
     }
     public int itemCount() {
-        return this.itemList.size();
+        return this.itemMap.size();
     }
 
     private void addPrice(int price,int tax){
         subTotalPrice= subTotalPrice+price;
-        totaltax=totaltax+tax;
+        totalTax=totalTax+tax;
 
     }
     private void deductFromPrice(int price, int tax){
         if(subTotalPrice!=0)
             subTotalPrice= subTotalPrice-price;
-        if(totaltax!=0)
-            totaltax=totaltax-tax;
+        if(totalTax!=0)
+            totalTax=totalTax-tax;
 
     }
     public int getSubTotalPrice(){
@@ -83,11 +73,11 @@ public class ShoesViewModel extends ViewModel {
 
     }
     public int getTotaltax(){
-        return totaltax;
+        return totalTax;
 
     }
     public int getTotalPrice(){
-        return subTotalPrice+totaltax;
+        return subTotalPrice+totalTax;
 
     }
     public String appendString(String key, String value){

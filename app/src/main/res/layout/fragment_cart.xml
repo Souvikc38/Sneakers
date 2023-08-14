@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:textSize="18sp"
-        app:fontFamily="@font/open_sans_extrabold"
+        app:fontFamily="@font/open_sans_bold"
         android:text="@string/sub_total"
         app:layout_constraintStart_toStartOf="@+id/tv_order_details"
         app:layout_constraintTop_toBottomOf="@+id/tv_order_details" />
@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:textSize="18sp"
-        app:fontFamily="@font/open_sans_extrabold"
+        app:fontFamily="@font/open_sans_bold"
         android:text="@string/taxes_and_charges"
         app:layout_constraintStart_toStartOf="@+id/tv_subtotal"
         app:layout_constraintTop_toBottomOf="@+id/tv_subtotal" />
@@ -62,7 +62,8 @@
         android:layout_marginTop="10dp"
         android:textSize="18sp"
         app:fontFamily="@font/open_sans_extrabold"
-        android:text="@string/taxes_and_charges"
+        android:text="@string/total"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@+id/tv_taxes"
         app:layout_constraintTop_toBottomOf="@+id/tv_taxes" />
 </androidx.constraintlayout.widget.ConstraintLayout>

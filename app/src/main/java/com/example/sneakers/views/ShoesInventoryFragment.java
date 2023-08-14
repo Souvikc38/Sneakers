@@ -42,6 +42,7 @@ public class ShoesInventoryFragment extends Fragment {
             shoesListAdapter =new ShoesListAdapter(requireContext(),shoesList,this::onClickProduct);
             binding.rvProductRecycler.setAdapter(shoesListAdapter);
         });
+        ((MainActivity)getActivity()).showToolbar();
 
         return binding.getRoot();
     }
@@ -50,7 +51,8 @@ public class ShoesInventoryFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         binding.fabButton.setOnClickListener(views -> {
-            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container, new CartFragment()).addToBackStack(null).commit();
+            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container,
+                    new CartFragment(),CartFragment.class.getName()).addToBackStack(null).commit();
         });
     }
 

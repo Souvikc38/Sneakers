@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProviders;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 
 import com.example.sneakers.databinding.ActivityMainBinding;
 import com.example.sneakers.model.JsonUtils;
@@ -34,9 +35,23 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        setSupportActionBar(binding.toolbar);
         shoesViewModel = new ViewModelProvider(this).get(ShoesViewModel.class);
-        parseJsonToDataModel();
+        Fragment shoesInventoryFragment = new ShoesInventoryFragment();
+        getSupportFragmentManager().beginTransaction().add(R.id.container, shoesInventoryFragment,shoesInventoryFragment.getClass().getName()).commit();
     }
+    /*
+       Handle back button press on the toolbar
+    * */
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     @Override
     public void onBackPressed ()
     {
@@ -48,17 +63,19 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void parseJsonToDataModel(){
-        shoesViewModel.getShoesListLiveData(getResources())
-                .observe(this, new Observer<List<ShoesModel>>() {
-                    @Override
-                    public void onChanged(List<ShoesModel> userList) {
-                        Fragment shoesInventoryFragment = new ShoesInventoryFragment();
-                        getSupportFragmentManager().beginTransaction().add(R.id.container, shoesInventoryFragment).commit();
-                    }
-                });
-    }
+    public void showToolbar(){
+        if (binding.toolbar != null) {
 
+            Fragment homeFrag = getSupportFragmentManager().findFragmentById(R.id.container);
+            if(homeFrag instanceof ShoesInventoryFragment){
+                getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+                getSupportActionBar().setDisplayShowHomeEnabled(false);
+            } else {
+                getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+                getSupportActionBar().setDisplayShowHomeEnabled(true);
+            }
+        }
+    }
 
     public ShoesViewModel getShoesViewModel() {
         return shoesViewModel;
