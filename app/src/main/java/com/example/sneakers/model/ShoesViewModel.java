@@ -23,7 +23,7 @@ import java.util.Scanner;
 
 public class ShoesViewModel extends ViewModel {
     private static final String TAG = "ShoesViewModel";
-    private HashMap<String,ShoesModel> itemMap = new HashMap<>();;
+    private HashMap<String, ShoesModel> itemMap = new HashMap<>();
     private MutableLiveData<List<ShoesModel>> shoesListLiveData = new MutableLiveData<>();
 
     public LiveData<List<ShoesModel>> getShoesListLiveData(Resources resources) {
@@ -33,60 +33,74 @@ public class ShoesViewModel extends ViewModel {
         }
         return shoesListLiveData;
     }
-    private int subTotalPrice=0;
-    private int totalTax=0;
+    private int subTotalPrice = 0;
+    private int totalTax = 0;
 
-    public HashMap<String,ShoesModel> getItemList() {
+    public HashMap<String, ShoesModel> getItemList() {
         return itemMap;
     }
 
-    public void addItem(String productId,ShoesModel selectedShoes) {
-        if(!itemMap.containsKey(productId)) {
+    /*
+      Add Item to cart logic
+      * */
+    public void addItem(String productId, ShoesModel selectedShoes) {
+        if (!itemMap.containsKey(productId)) {
             itemMap.put(productId, selectedShoes);
             addPrice(selectedShoes.getRetailprice(), selectedShoes.getTax());
         }
     }
-    public void deleteItem(String productId,ShoesModel shoesModel) {
 
+    /*
+   Remove Item from cart logic
+   * */
+    public void deleteItem(String productId, ShoesModel shoesModel) {
         itemMap.remove(productId);
-        deductFromPrice(shoesModel.getRetailprice(),shoesModel.getTax());
-
+        deductFromPrice(shoesModel.getRetailprice(), shoesModel.getTax());
     }
+
     public int itemCount() {
         return this.itemMap.size();
     }
 
-    private void addPrice(int price,int tax){
-        subTotalPrice= subTotalPrice+price;
-        totalTax=totalTax+tax;
+    private void addPrice(int price, int tax) {
+        subTotalPrice = subTotalPrice + price;
+        totalTax = totalTax + tax;
 
     }
-    private void deductFromPrice(int price, int tax){
-        if(subTotalPrice!=0)
-            subTotalPrice= subTotalPrice-price;
-        if(totalTax!=0)
-            totalTax=totalTax-tax;
+
+    private void deductFromPrice(int price, int tax) {
+        if (subTotalPrice != 0)
+            subTotalPrice = subTotalPrice - price;
+        if (totalTax != 0)
+            totalTax = totalTax - tax;
 
     }
-    public int getSubTotalPrice(){
+
+    public int getSubTotalPrice() {
         return subTotalPrice;
 
     }
-    public int getTotaltax(){
+
+    public int getTotaltax() {
         return totalTax;
 
     }
-    public int getTotalPrice(){
-        return subTotalPrice+totalTax;
+
+    public int getTotalPrice() {
+        return subTotalPrice + totalTax;
 
     }
-    public String appendString(String key, String value){
-        SpannableStringBuilder message =new SpannableStringBuilder(key);
+
+    public String appendString(String key, String value) {
+        SpannableStringBuilder message = new SpannableStringBuilder(key);
         message.append(" : $");
         message.append(value);
         return message.toString();
     }
 
+    /*
+      Parsing json data into Data Model.
+      * */
     private List<ShoesModel> parseJsonArray(Resources resources) {
         List<ShoesModel> shoesList = new ArrayList<>();
         try {

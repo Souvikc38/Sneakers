@@ -1,30 +1,18 @@
 package com.example.sneakers;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelProviders;
-
-import android.content.res.Resources;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
-
 import com.example.sneakers.databinding.ActivityMainBinding;
-import com.example.sneakers.model.JsonUtils;
-import com.example.sneakers.model.ShoesModel;
 import com.example.sneakers.model.ShoesViewModel;
 import com.example.sneakers.views.ShoesInventoryFragment;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
@@ -38,8 +26,10 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(binding.toolbar);
         shoesViewModel = new ViewModelProvider(this).get(ShoesViewModel.class);
         Fragment shoesInventoryFragment = new ShoesInventoryFragment();
-        getSupportFragmentManager().beginTransaction().add(R.id.container, shoesInventoryFragment,shoesInventoryFragment.getClass().getName()).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.container, shoesInventoryFragment,
+                shoesInventoryFragment.getClass().getName()).commit();
     }
+
     /*
        Handle back button press on the toolbar
     * */
@@ -53,8 +43,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onBackPressed ()
-    {
+    public void onBackPressed() {
         FragmentManager fm = getSupportFragmentManager();
         if (fm.getBackStackEntryCount() > 0) {
             fm.popBackStack();
@@ -63,11 +52,37 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void showToolbar(){
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.serach_menu, menu);
+
+        MenuItem searchItem = menu.findItem(R.id.action_search);
+        SearchView searchView = (SearchView) searchItem.getActionView();
+       /* searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                //adapter.getFilter().filter(newText);
+                return true;
+            }
+        });*/
+
+        return true;
+    }
+
+
+    /*
+    Except Home Fragment Display back button on other fragments.
+    * */
+    public void showToolbar() {
         if (binding.toolbar != null) {
 
-            Fragment homeFrag = getSupportFragmentManager().findFragmentById(R.id.container);
-            if(homeFrag instanceof ShoesInventoryFragment){
+            Fragment homeFragment = getSupportFragmentManager().findFragmentById(R.id.container);
+            if (homeFragment instanceof ShoesInventoryFragment) {
                 getSupportActionBar().setDisplayHomeAsUpEnabled(false);
                 getSupportActionBar().setDisplayShowHomeEnabled(false);
             } else {

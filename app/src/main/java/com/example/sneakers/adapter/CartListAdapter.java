@@ -1,5 +1,6 @@
 package com.example.sneakers.adapter;
 import android.content.Context;
+import android.text.SpannableStringBuilder;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,7 +39,7 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.CartVi
         ShoesModel shoesModel= cartItemList.get(position);
         Glide.with(mContext).load(shoesModel.getMedia().getImageurl()).into(viewBinding.ivProductImg);
         viewBinding.tvName.setText(shoesModel.getName());
-        viewBinding.tvPrice.setText(String.valueOf(shoesModel.getRetailprice()));
+        viewBinding.tvPrice.setText(appendString(String.valueOf(shoesModel.getRetailprice())));
         viewBinding.ivRemoveIcon.setOnClickListener(view -> {
             onRemoveClick.onItemRemoveClick(shoesModel.getId(),position,shoesModel);
         });
@@ -62,6 +63,11 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.CartVi
             super(itemView);
             viewBinding= DataBindingUtil.bind(itemView);
         }
+    }
+    public String appendString( String value){
+        SpannableStringBuilder message =new SpannableStringBuilder("$");
+        message.append(value);
+        return message.toString();
     }
     public interface CartClickListner{
         void onItemRemoveClick(String itemId,int position,ShoesModel shoesModel);

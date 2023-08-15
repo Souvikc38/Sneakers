@@ -1,7 +1,7 @@
 package com.example.sneakers.adapter;
 
 import android.content.Context;
-import android.util.Log;
+import android.text.SpannableStringBuilder;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,16 +14,12 @@ import com.bumptech.glide.Glide;
 import com.example.sneakers.R;
 import com.example.sneakers.databinding.ShoesListItemBinding;
 import com.example.sneakers.model.ShoesModel;
-import com.example.sneakers.model.ShoesViewModel;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class ShoesListAdapter extends RecyclerView.Adapter<ShoesListAdapter.ShoesViewHolder> {
     private static final String TAG = "ShoesListAdapter";
 private ShoesListItemBinding viewBinding;
 private List<ShoesModel> shoesModelList;
-private List<ShoesModel> shoesSelectedList= new ArrayList<>();
 private ProductClickListner productClickListner;
 private Context mContext;
 
@@ -45,8 +41,7 @@ private Context mContext;
          ShoesModel shoesModels = shoesModelList.get(position);
         Glide.with(mContext).load(shoesModels.getMedia().getImageurl()).into(viewBinding.ivProductImg);
         viewBinding.tvName.setText(shoesModels.getName());
-        viewBinding.tvPrice.setText(String.valueOf(shoesModels.getRetailprice()));
-
+        viewBinding.tvPrice.setText(appendString(String.valueOf(shoesModels.getRetailprice())));
         viewBinding.ivAddIcon.setOnClickListener(view -> {
             productClickListner.onProductClick(shoesModels.getId(),shoesModels);
         });
@@ -69,6 +64,11 @@ private Context mContext;
             super(itemView);
             viewBinding= DataBindingUtil.bind(itemView);
         }
+    }
+    public String appendString( String value){
+        SpannableStringBuilder message =new SpannableStringBuilder("$");
+        message.append(value);
+        return message.toString();
     }
     public interface ProductClickListner{
         void onProductClick(String itemId, ShoesModel shoesModel);
