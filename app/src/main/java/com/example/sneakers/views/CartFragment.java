@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class CartFragment extends Fragment {
+public class CartFragment extends Fragment implements CartListAdapter.CartClickListner {
     private static final String TAG = "CartFragment";
     private FragmentCartBinding binding;
     private CartListAdapter cartListAdapter;
@@ -42,7 +42,7 @@ public class CartFragment extends Fragment {
         binding.rvCartRecycler.setLayoutManager(new GridLayoutManager(requireContext(),1,
                 GridLayoutManager.VERTICAL,false));
         shoesModelList = new ArrayList<ShoesModel>(shoesViewModel.getItemList().values());
-        cartListAdapter =new CartListAdapter(requireContext(),shoesModelList,this::onRemoveCart);
+        cartListAdapter =new CartListAdapter(requireContext(),shoesModelList,this);
         binding.rvCartRecycler.setAdapter(cartListAdapter);
         return binding.getRoot();
     }
@@ -52,11 +52,6 @@ public class CartFragment extends Fragment {
         isRecyclerReady();
     }
 
-    private void onRemoveCart(String productId, int position,ShoesModel shoesModel){
-       shoesViewModel.deleteItem(productId,shoesModel);
-       removeItem(position);
-
-    }
     private void removeItem(int position) {
         if (position >= 0 && position < shoesModelList.size()) {
             shoesModelList.remove(position);
@@ -87,4 +82,10 @@ public class CartFragment extends Fragment {
     }
 
 
+    @Override
+    public void onItemRemoveClick(String productId, int position, ShoesModel shoesModel) {
+        shoesViewModel.deleteItem(productId,shoesModel);
+        removeItem(position);
+
+    }
 }

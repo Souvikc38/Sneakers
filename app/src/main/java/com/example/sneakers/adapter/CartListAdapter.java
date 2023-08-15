@@ -35,8 +35,8 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.CartVi
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CartViewHolder holder, int position) {
-        ShoesModel shoesModel= cartItemList.get(position);
+    public void onBindViewHolder(@NonNull final CartViewHolder holder, final int position) {
+        final ShoesModel shoesModel= cartItemList.get(position);
         Glide.with(mContext).load(shoesModel.getMedia().getImageurl()).into(viewBinding.ivProductImg);
         viewBinding.tvName.setText(shoesModel.getName());
         viewBinding.tvPrice.setText(appendString(String.valueOf(shoesModel.getRetailprice())));
