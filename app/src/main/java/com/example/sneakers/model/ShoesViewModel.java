@@ -2,7 +2,6 @@ package com.example.sneakers.model;
 
 import android.content.res.Resources;
 import android.text.SpannableStringBuilder;
-import android.util.Log;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

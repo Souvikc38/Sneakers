@@ -4,11 +4,7 @@ import android.os.Bundle;
 
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
-
-import android.text.SpannableStringBuilder;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +13,6 @@ import android.view.ViewTreeObserver;
 import com.example.sneakers.MainActivity;
 import com.example.sneakers.R;
 import com.example.sneakers.adapter.CartListAdapter;
-import com.example.sneakers.adapter.ShoesListAdapter;
 import com.example.sneakers.databinding.FragmentCartBinding;
 import com.example.sneakers.model.ShoesModel;
 import com.example.sneakers.model.ShoesViewModel;
