@@ -1,5 +1,7 @@
 package com.example.sneakers.views;
 
+import static com.example.sneakers.utils.Constants.SELECTED_SHOES;
+
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -53,14 +55,26 @@ public class ShoesInventoryFragment extends Fragment implements ShoesListAdapter
     public void onResume() {
         super.onResume();
         if (shoesViewModel.getItemList() != null) {
+            if(shoesViewModel.itemCount()!=0)
             binding.tvCount.setText(String.valueOf(shoesViewModel.itemCount()));
         }
     }
 
 
     @Override
-    public void onProductClick(String selectedItemId, ShoesModel selectedShoes) {
+    public void onProductAddClick(String selectedItemId, ShoesModel selectedShoes) {
         shoesViewModel.addItem(selectedItemId, selectedShoes);
+        if(shoesViewModel.itemCount()!=0)
         binding.tvCount.setText(String.valueOf(shoesViewModel.itemCount()));
+    }
+
+    @Override
+    public void onProductItemClick(ShoesModel shoesModel) {
+        Bundle bundle= new Bundle();
+        bundle.putSerializable(SELECTED_SHOES,shoesModel);
+        Fragment shoesDetailsFragment = new ShoesDetailsFragment();
+        shoesDetailsFragment.setArguments(bundle);
+        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container,
+                shoesDetailsFragment,ShoesDetailsFragment.class.getName()).addToBackStack(null).commit();
     }
 }

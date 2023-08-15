@@ -42,9 +42,9 @@ private Context mContext;
         Glide.with(mContext).load(shoesModels.getMedia().getImageurl()).into(viewBinding.ivProductImg);
         viewBinding.tvName.setText(shoesModels.getName());
         viewBinding.tvPrice.setText(appendString(String.valueOf(shoesModels.getRetailprice())));
-        viewBinding.ivAddIcon.setOnClickListener(view -> {
-            productClickListner.onProductClick(shoesModels.getId(),shoesModels);
-        });
+        viewBinding.ivAddIcon.setOnClickListener(view -> productClickListner.
+                onProductAddClick(shoesModels.getId(),shoesModels));
+        viewBinding.cardView.setOnClickListener(view -> productClickListner.onProductItemClick(shoesModels));
 
     }
 
@@ -71,6 +71,7 @@ private Context mContext;
         return message.toString();
     }
     public interface ProductClickListner{
-        void onProductClick(String itemId, ShoesModel shoesModel);
+        void onProductAddClick(String itemId, ShoesModel shoesModel);
+        void onProductItemClick( ShoesModel shoesModel);
     }
 }

@@ -117,8 +117,11 @@ public class ShoesViewModel extends ViewModel {
                 shoes.setName(jsonObject.getString("name"));
                 shoes.setRetailprice(jsonObject.getInt("retailPrice"));
                 shoes.setTax(jsonObject.getInt("tax"));
+                shoes.setBrand(jsonObject.getString("brand"));
+                shoes.setGender(jsonObject.getString("gender"));
+                shoes.setReleasedate(jsonObject.getString("releaseDate"));
                 JSONObject mediaObject = jsonObject.getJSONObject("media");
-                ShoesModel.Media media = new ShoesModel.Media();
+                Media media = new Media();
                 media.setImageurl(mediaObject.getString("imageUrl"));
                 shoes.setMedia(media);
                 shoesList.add(shoes);

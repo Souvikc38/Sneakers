@@ -1,6 +1,8 @@
 package com.example.sneakers.model;
 
-public  class ShoesModel {
+import java.io.Serializable;
+
+public  class ShoesModel implements Serializable {
 
     private int year;
     private String title;
@@ -112,68 +114,11 @@ public  class ShoesModel {
         this.id = id;
     }
 
-    @Override
-    public String toString() {
-        return "ShoesModel{" +
-                "year=" + year +
-                ", title='" + title + '\'' +
-                ", name='" + name + '\'' +
-                ", shoe='" + shoe + '\'' +
-                ", styleid='" + styleid + '\'' +
-                ", retailprice=" + retailprice +
-                ", releasedate='" + releasedate + '\'' +
-                ", media=" + media +
-                ", gender='" + gender + '\'' +
-                ", colorway='" + colorway + '\'' +
-                ", brand='" + brand + '\'' +
-                ", id='" + id + '\'' +
-                '}';
-    }
-
     public int getTax() {
         return tax;
     }
 
     public void setTax(int tax) {
         this.tax = tax;
-    }
-
-    public static class Media {
-        private String thumburl;
-        private String smallimageurl;
-        private String imageurl;
-
-        public String getThumburl() {
-            return thumburl;
-        }
-
-        public void setThumburl(String thumburl) {
-            this.thumburl = thumburl;
-        }
-
-        public String getSmallimageurl() {
-            return smallimageurl;
-        }
-
-        public void setSmallimageurl(String smallimageurl) {
-            this.smallimageurl = smallimageurl;
-        }
-
-        public String getImageurl() {
-            return imageurl;
-        }
-
-        public void setImageurl(String imageurl) {
-            this.imageurl = imageurl;
-        }
-
-        @Override
-        public String toString() {
-            return "Media{" +
-                    "thumburl='" + thumburl + '\'' +
-                    ", smallimageurl='" + smallimageurl + '\'' +
-                    ", imageurl='" + imageurl + '\'' +
-                    '}';
-        }
     }
 }

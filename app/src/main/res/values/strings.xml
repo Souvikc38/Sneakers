@@ -5,4 +5,8 @@
     <string name="total">Total</string>
     <string name="sub_total">Subtotal</string>
     <string name="taxes_and_charges">Taxes and Charges</string>
+    <string name="brand">Brand</string>
+    <string name="gender">Gender</string>
+    <string name="year_of_release">Released On</string>
+    <string name="checkout">Checkout</string>
 </resources>
