@@ -40,7 +40,7 @@ public class ShoesViewModel extends ViewModel {
     }
 
     /*
-      Add Item to cart logic
+      * Add Item to cart logic
       * */
     public void addItem(String productId, ShoesModel selectedShoes) {
         if (!itemMap.containsKey(productId)) {
@@ -50,7 +50,7 @@ public class ShoesViewModel extends ViewModel {
     }
 
     /*
-   Remove Item from cart logic
+      * Remove Item from cart logic
    * */
     public void deleteItem(String productId, ShoesModel shoesModel) {
         itemMap.remove(productId);
@@ -98,7 +98,7 @@ public class ShoesViewModel extends ViewModel {
     }
 
     /*
-      Parsing json data into Data Model.
+      * Parsing json data into Data Model.
       * */
     private List<ShoesModel> parseJsonArray(Resources resources) {
         List<ShoesModel> shoesList = new ArrayList<>();

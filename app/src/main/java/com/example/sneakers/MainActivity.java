@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /*
-       Handle back button press on the toolbar
+       * Handle back button press on the toolbar
     * */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
